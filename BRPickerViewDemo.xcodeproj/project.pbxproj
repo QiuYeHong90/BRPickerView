@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70794CE2223B3E100025D08C /* Login_birthday_quxiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70794CE0223B3E0F0025D08C /* Login_birthday_quxiao@2x.png */; };
-		70794CE3223B3E100025D08C /* Login_birthday_quxiao@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70794CE1223B3E0F0025D08C /* Login_birthday_quxiao@3x.png */; };
-		70794CE5223B3E1F0025D08C /* Login_birthday_queding@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70794CE4223B3E1F0025D08C /* Login_birthday_queding@2x.png */; };
-		70794CE9223B3E610025D08C /* Login_birthday_queding@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70794CE8223B3E610025D08C /* Login_birthday_queding@3x.png */; };
+		70794CEC223B43190025D08C /* NSBundle+BRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70794CEB223B43190025D08C /* NSBundle+BRPickerView.m */; };
 		C5655BA12084759300331751 /* BRInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5655BA02084759300331751 /* BRInfoCell.m */; };
 		C5655BA420848B1900331751 /* icon_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5655BA220848B1900331751 /* icon_next@2x.png */; };
 		C5655BA520848B1900331751 /* icon_next@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5655BA320848B1900331751 /* icon_next@3x.png */; };
@@ -35,10 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		70794CE0223B3E0F0025D08C /* Login_birthday_quxiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login_birthday_quxiao@2x.png"; sourceTree = "<group>"; };
-		70794CE1223B3E0F0025D08C /* Login_birthday_quxiao@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login_birthday_quxiao@3x.png"; sourceTree = "<group>"; };
-		70794CE4223B3E1F0025D08C /* Login_birthday_queding@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login_birthday_queding@2x.png"; sourceTree = "<group>"; };
-		70794CE8223B3E610025D08C /* Login_birthday_queding@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login_birthday_queding@3x.png"; sourceTree = "<group>"; };
+		70794CEA223B43190025D08C /* NSBundle+BRPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+BRPickerView.h"; sourceTree = "<group>"; };
+		70794CEB223B43190025D08C /* NSBundle+BRPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+BRPickerView.m"; sourceTree = "<group>"; };
 		C5655B9F2084759300331751 /* BRInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRInfoCell.h; sourceTree = "<group>"; };
 		C5655BA02084759300331751 /* BRInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRInfoCell.m; sourceTree = "<group>"; };
 		C5655BA220848B1900331751 /* icon_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_next@2x.png"; sourceTree = "<group>"; };
@@ -159,16 +154,14 @@
 		C5ACE4F01F3D5A8B0069978B /* BRPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				70794CE4223B3E1F0025D08C /* Login_birthday_queding@2x.png */,
-				70794CE8223B3E610025D08C /* Login_birthday_queding@3x.png */,
-				70794CE0223B3E0F0025D08C /* Login_birthday_quxiao@2x.png */,
-				70794CE1223B3E0F0025D08C /* Login_birthday_quxiao@3x.png */,
 				C5ACE5201F3D90A90069978B /* BRPickerView.h */,
 				C580EEAA208D893900C240AF /* BRPickerViewMacro.h */,
 				C5ACE51C1F3D904F0069978B /* Base */,
 				C5ACE4F31F3D5A8B0069978B /* DatePickerView */,
 				C5ACE4F11F3D5A8B0069978B /* AddressPickerView */,
 				C5ACE4F41F3D5A8B0069978B /* StringPickerView */,
+				70794CEA223B43190025D08C /* NSBundle+BRPickerView.h */,
+				70794CEB223B43190025D08C /* NSBundle+BRPickerView.m */,
 			);
 			path = BRPickerView;
 			sourceTree = SOURCE_ROOT;
@@ -288,20 +281,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70794CE9223B3E610025D08C /* Login_birthday_queding@3x.png in Resources */,
 				C5655BA420848B1900331751 /* icon_next@2x.png in Resources */,
 				C57E775C204699B2004A2425 /* BRPickerView.bundle in Resources */,
 				C5EB52DA2019B75C00FECAD5 /* BRCity.json in Resources */,
 				C5ACE4E91F3D58BD0069978B /* LaunchScreen.storyboard in Resources */,
-				70794CE2223B3E100025D08C /* Login_birthday_quxiao@2x.png in Resources */,
 				C5EB52D82018D5DF00FECAD5 /* testData3.plist in Resources */,
 				C5ACE4E61F3D58BD0069978B /* Assets.xcassets in Resources */,
-				70794CE3223B3E100025D08C /* Login_birthday_quxiao@3x.png in Resources */,
 				C5ACE4E41F3D58BD0069978B /* Main.storyboard in Resources */,
 				C5655BA520848B1900331751 /* icon_next@3x.png in Resources */,
 				C5EB52D42018D38100FECAD5 /* testData1.plist in Resources */,
 				C5EB52D62018D39900FECAD5 /* testData2.plist in Resources */,
-				70794CE5223B3E1F0025D08C /* Login_birthday_queding@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +306,7 @@
 				C5ACE4DB1F3D58BD0069978B /* main.m in Sources */,
 				C5ACE50B1F3D7D890069978B /* BRDatePickerView.m in Sources */,
 				C5655BA82084B3B000331751 /* BRInfoModel.m in Sources */,
+				70794CEC223B43190025D08C /* NSBundle+BRPickerView.m in Sources */,
 				C5ACE5121F3D81360069978B /* TestViewController.m in Sources */,
 				C5F069BB208F0BCA00C969B9 /* NSDate+BRPickerView.m in Sources */,
 				C5655BA12084759300331751 /* BRInfoCell.m in Sources */,

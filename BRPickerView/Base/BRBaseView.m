@@ -6,7 +6,7 @@
 //  Copyright © 2017年 91renb. All rights reserved.
 //
 //  最新代码下载地址：https://github.com/91renb/BRPickerView
-
+#import "NSBundle+BRPickerView.h"
 #import "BRBaseView.h"
 #import "BRPickerViewMacro.h"
 
@@ -85,8 +85,8 @@
 //        [_leftBtn setTitleColor:[UIColor colorWithHexString:@"ff7200"] forState:UIControlStateNormal];
 //        ff7200
 //        [_leftBtn setTitle:NSLocalizedString(@"m05_p02_btn_cancel", nil) forState:UIControlStateNormal];
-        
-        [_leftBtn setImage:[UIImage imageNamed:@"Login_birthday_quxiao"] forState:UIControlStateNormal];
+        UIImage * imgName  =  [NSBundle BRPickerView_imageName:@"Login_birthday_quxiao@2x"];
+        [_leftBtn setImage:imgName forState:UIControlStateNormal];
         [_leftBtn addTarget:self action:@selector(clickLeftBtn) forControlEvents:UIControlEventTouchUpInside];
     }
     return _leftBtn;
@@ -108,8 +108,8 @@
         _rightBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f * kScaleFit];
 //        [_rightBtn setTitleColor:[UIColor colorWithHexString:@"21ba65"] forState:UIControlStateNormal];
 //        [_rightBtn setTitle: NSLocalizedString(@"m01_p04_btn_confirm", nil) forState:UIControlStateNormal];
-        
-        [_rightBtn setImage:[UIImage imageNamed:@"Login_birthday_queding"] forState:UIControlStateNormal];
+        UIImage * imgName  =  [NSBundle BRPickerView_imageName:@"Login_birthday_queding@2x"];
+        [_rightBtn setImage:imgName forState:UIControlStateNormal];
         
         
         [_rightBtn addTarget:self action:@selector(clickRightBtn) forControlEvents:UIControlEventTouchUpInside];
