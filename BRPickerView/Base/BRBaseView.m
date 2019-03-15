@@ -72,13 +72,21 @@
 #pragma mark - 左边取消按钮
 - (UIButton *)leftBtn {
     if (!_leftBtn) {
+        CGFloat space = 5 ;
+//        CGFloat r_w = self.alertView.frame.size.width/4 - space;
+        CGFloat r_w = 38;
         _leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _leftBtn.frame = CGRectMake(5, 8, 60, 28);
+        _leftBtn.frame = CGRectMake(space, 8, r_w, 28);
         _leftBtn.backgroundColor = kBRToolBarColor;
         _leftBtn.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
+        
+        
         _leftBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f * kScaleFit];
-        [_leftBtn setTitleColor:kDefaultThemeColor forState:UIControlStateNormal];
-        [_leftBtn setTitle:@"取消" forState:UIControlStateNormal];
+//        [_leftBtn setTitleColor:[UIColor colorWithHexString:@"ff7200"] forState:UIControlStateNormal];
+//        ff7200
+//        [_leftBtn setTitle:NSLocalizedString(@"m05_p02_btn_cancel", nil) forState:UIControlStateNormal];
+        
+        [_leftBtn setImage:[UIImage imageNamed:@"Login_birthday_quxiao"] forState:UIControlStateNormal];
         [_leftBtn addTarget:self action:@selector(clickLeftBtn) forControlEvents:UIControlEventTouchUpInside];
     }
     return _leftBtn;
@@ -87,13 +95,23 @@
 #pragma mark - 右边确定按钮
 - (UIButton *)rightBtn {
     if (!_rightBtn) {
+        
+
         _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _rightBtn.frame = CGRectMake(self.alertView.frame.size.width - 65, 8, 60, 28);
+        
+        CGFloat space = 5 ;
+//        CGFloat r_w = self.alertView.frame.size.width/4 - space;
+        CGFloat r_w = 38;
+        _rightBtn.frame = CGRectMake(self.alertView.frame.size.width - r_w-space, 8, r_w, 28);
         _rightBtn.backgroundColor = kBRToolBarColor;
         _rightBtn.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin;
         _rightBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f * kScaleFit];
-        [_rightBtn setTitleColor:kDefaultThemeColor forState:UIControlStateNormal];
-        [_rightBtn setTitle:@"确定" forState:UIControlStateNormal];
+//        [_rightBtn setTitleColor:[UIColor colorWithHexString:@"21ba65"] forState:UIControlStateNormal];
+//        [_rightBtn setTitle: NSLocalizedString(@"m01_p04_btn_confirm", nil) forState:UIControlStateNormal];
+        
+        [_rightBtn setImage:[UIImage imageNamed:@"Login_birthday_queding"] forState:UIControlStateNormal];
+        
+        
         [_rightBtn addTarget:self action:@selector(clickRightBtn) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rightBtn;
@@ -108,6 +126,7 @@
         _titleLabel.font = [UIFont systemFontOfSize:14.0f * kScaleFit];
         _titleLabel.textColor = [kDefaultThemeColor colorWithAlphaComponent:0.8f];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.hidden = YES ;
     }
     return _titleLabel;
 }
