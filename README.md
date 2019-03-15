@@ -88,7 +88,7 @@ BRPickerView 封装的是iOS中常用的选择器组件。高度封装，只需�
 
 #### 4.1. CocoaPods
 
-1. 在 Podfile 中添加 `pod 'BRPickerView'`。
+1. 在 Podfile 中添加 `pod 'BRPickerView'`,:git =>'git@github.com:QiuYeHong90/BRPickerView.git'。
 
 2. 执行 `pod install` 或 `pod update` 。
 
