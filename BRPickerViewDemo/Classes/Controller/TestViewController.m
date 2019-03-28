@@ -5,7 +5,7 @@
 //  Created by 任波 on 2017/8/11.
 //  Copyright © 2017年 91renb. All rights reserved.
 //
-
+//#import "BRDateMixedView.h"
 #import "TestViewController.h"
 #import "BRPickerView.h"
 #import "BRInfoCell.h"
@@ -159,6 +159,12 @@
             break;
             
         default:
+        {
+            cell.isNeed = NO;
+            cell.isNext = YES;
+            cell.textField.placeholder = @"请选择";
+            cell.textField.text = self.infoModel.otherStr;
+        }
             break;
     }
     
@@ -289,7 +295,13 @@
             }];
         }
             break;
-            
+        case 8:
+        {
+//            [BRDateMixedView showDatePickerWithTitle:nil defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:NO themeColor:nil resultBlock:^(NSString *selectValue) {
+//                
+//            }];
+        }
+            break;
         default:
             break;
     }
@@ -303,7 +315,7 @@
 
 - (NSArray *)titleArr {
     if (!_titleArr) {
-        _titleArr = @[@"姓名", @"性别", @"出生年月", @"出生时刻", @"联系方式", @"地址", @"学历", @"其它"];
+        _titleArr = @[@"姓名", @"性别", @"出生年月", @"出生时刻", @"联系方式", @"地址", @"学历", @"其它",@"混合日期"];
     }
     return _titleArr;
 }

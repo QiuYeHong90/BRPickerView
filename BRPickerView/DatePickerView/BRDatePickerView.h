@@ -108,4 +108,19 @@ typedef void(^BRDateCancelBlock)(void);
                     resultBlock:(BRDateResultBlock)resultBlock
                     cancelBlock:(BRDateCancelBlock)cancelBlock;
 
+
+#pragma mark - 初始化时间选择器
+- (instancetype)initWithTitle:(NSString *)title
+                     dateType:(BRDatePickerMode)dateType
+              defaultSelValue:(NSString *)defaultSelValue
+                      minDate:(NSDate *)minDate
+                      maxDate:(NSDate *)maxDate
+                 isAutoSelect:(BOOL)isAutoSelect
+                   themeColor:(UIColor *)themeColor
+                  resultBlock:(BRDateResultBlock)resultBlock
+                  cancelBlock:(BRDateCancelBlock)cancelBlock;
+
+#pragma mark - 弹出视图方法
+- (void)showWithAnimation:(BOOL)animation;
+
 @end
