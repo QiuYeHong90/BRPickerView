@@ -52,6 +52,8 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
 @property (nonatomic, strong) NSDate *selectDate;
 /** 选择的日期的格式 */
 @property (nonatomic, strong) NSString *selectDateFormatter;
+/** 外面的日期格式 */
+@property (nonatomic, strong) NSString *myDateFormatter;
 /** 选中后的回调 */
 @property (nonatomic, copy) BRDateResultBlock resultBlock;
 /** 取消选择的回调 */
@@ -433,6 +435,9 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     }
     return formatStr ;
 }
+
+
+
 +(NSDate *)getDateWithSlectValue:(NSString *)selectValue format:(NSString *)format
 {
     NSDateFormatter * formater = [[NSDateFormatter alloc]init];
@@ -468,6 +473,32 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     return  [self getDateStrWithformat:format dateStr1:myDateStr format1:myDateFormat];
     
 }
+#pragma mark - ysh_日期格式自定义
++ (void)ysh_showDatePickerWithTitle:(NSString *)title
+                       dateType:(BRDatePickerMode)dateType
+                defaultSelValue:(NSString *)defaultSelValue
+                myDateFormatter:(NSString *)myDateFormatter
+                        minDate:(NSDate *)minDate
+                        maxDate:(NSDate *)maxDate
+                   isAutoSelect:(BOOL)isAutoSelect
+                     themeColor:(UIColor *)themeColor
+                    resultBlock:(void(^)(NSString * value,NSDate * date))resultBlock {
+    
+    NSString * selValue = [self getSelectValueWithModel:dateType myDateStr:defaultSelValue myDateFormat:myDateFormatter];
+    
+    BRDatePickerView *datePickerView = [[BRDatePickerView alloc]initWithTitle:title dateType:dateType defaultSelValue:selValue minDate:minDate maxDate:maxDate isAutoSelect:isAutoSelect themeColor:themeColor resultBlock:^(NSString *selectValue) {
+        NSString * myDateStr  = [BRDatePickerView getMyDateStringWithMyFormat:myDateFormatter slectValue:selectValue model:dateType];
+        NSDate * selDate  = [BRDatePickerView getDateWithSlectValue:selectValue model:dateType];
+        if (resultBlock) {
+            resultBlock(myDateStr,selDate);
+        }
+    } cancelBlock:nil];
+     datePickerView.myDateFormatter = myDateFormatter ;
+    [datePickerView showWithAnimation:YES];
+}
+
+
+
 
 
 #pragma mark - 初始化子视图

@@ -154,4 +154,15 @@ typedef void(^BRDateCancelBlock)(void);
  @return 转换pickerView 可以用的
  */
 +(NSString *)getSelectValueWithModel:(BRDatePickerMode)model myDateStr:(NSString *)myDateStr myDateFormat:(NSString *)myDateFormat;
+
+#pragma mark - ysh_日期格式自定义
++ (void)ysh_showDatePickerWithTitle:(NSString *)title
+                           dateType:(BRDatePickerMode)dateType
+                    defaultSelValue:(NSString *)defaultSelValue
+                    myDateFormatter:(NSString *)myDateFormatter
+                            minDate:(NSDate *)minDate
+                            maxDate:(NSDate *)maxDate
+                       isAutoSelect:(BOOL)isAutoSelect
+                         themeColor:(UIColor *)themeColor
+                        resultBlock:(void(^)(NSString * value,NSDate * date))resultBlock;
 @end
