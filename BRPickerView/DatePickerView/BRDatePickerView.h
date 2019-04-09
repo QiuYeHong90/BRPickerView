@@ -130,4 +130,28 @@ typedef void(^BRDateCancelBlock)(void);
  @return 日期格式
  */
 +(NSString *)getDateFormatStr:(BRDatePickerMode)model;
++(NSDate *)getDateWithSlectValue:(NSString *)selectValue format:(NSString *)format;
++(NSString *)getDateStrWithformat:(NSString *)fromat dateStr1:(NSString *)dateStr1 format1:(NSString *)format1;
+
++(NSDate *)getDateWithSlectValue:(NSString *)selectValue model:(BRDatePickerMode)model;
+
+/**
+ 获取 最终返回的日期 格式化
+
+ @param myFromat 我的日期格式化
+ @param selectValue 日期弹框里面值
+ @param model BRDatePickerMode
+ @return 我所需要的日期格式
+ */
++(NSString *)getMyDateStringWithMyFormat:(NSString *)myFromat slectValue:(NSString *)selectValue model:(BRDatePickerMode)model;
+
+/**
+ 获取选中的 日期字符串 根据现有的值 进行转换
+
+ @param model BRDatePickerMode
+ @param myDateStr 我的日期
+ @param myDateFormat 我的日期格式
+ @return 转换pickerView 可以用的
+ */
++(NSString *)getSelectValueWithModel:(BRDatePickerMode)model myDateStr:(NSString *)myDateStr myDateFormat:(NSString *)myDateFormat;
 @end

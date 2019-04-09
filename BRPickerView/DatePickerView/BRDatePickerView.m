@@ -433,6 +433,41 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     }
     return formatStr ;
 }
++(NSDate *)getDateWithSlectValue:(NSString *)selectValue format:(NSString *)format
+{
+    NSDateFormatter * formater = [[NSDateFormatter alloc]init];
+    formater.dateFormat = format ;
+    NSDate * date = [formater dateFromString:selectValue];
+    return date;
+}
++(NSString *)getDateStrWithformat:(NSString *)fromat dateStr1:(NSString *)dateStr1 format1:(NSString *)format1
+{
+    NSDate * date = [self  getDateWithSlectValue:dateStr1 format:format1];
+    NSDateFormatter * formater = [[NSDateFormatter alloc]init];
+    formater.dateFormat = fromat ;
+    NSString * myDateStr = [formater stringFromDate:date];
+    
+    return myDateStr ;
+}
++(NSDate *)getDateWithSlectValue:(NSString *)selectValue model:(BRDatePickerMode)model
+{
+    NSString * format = [self getDateFormatStr:model];
+    
+    
+    return [self getDateWithSlectValue:selectValue format:format];
+}
++(NSString *)getMyDateStringWithMyFormat:(NSString *)myFromat slectValue:(NSString *)selectValue model:(BRDatePickerMode)model
+{
+    NSString * format = [self getDateFormatStr:model];
+    return [self getDateStrWithformat:myFromat dateStr1:selectValue format1:format];
+}
+
++(NSString *)getSelectValueWithModel:(BRDatePickerMode)model myDateStr:(NSString *)myDateStr myDateFormat:(NSString *)myDateFormat
+{
+    NSString * format = [self getDateFormatStr:model];
+    return  [self getDateStrWithformat:format dateStr1:myDateStr format1:myDateFormat];
+    
+}
 
 
 #pragma mark - 初始化子视图
