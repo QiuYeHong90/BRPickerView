@@ -52,7 +52,6 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
 @property (nonatomic, strong) NSDate *selectDate;
 /** 选择的日期的格式 */
 @property (nonatomic, strong) NSString *selectDateFormatter;
-
 /** 选中后的回调 */
 @property (nonatomic, copy) BRDateResultBlock resultBlock;
 /** 取消选择的回调 */
@@ -328,6 +327,13 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
             break;
     }
 }
+
+
+-(NSString *)getDateFormatStr
+{
+    return self.selectDateFormatter ;
+}
+
 
 #pragma mark - 初始化子视图
 - (void)initUI {

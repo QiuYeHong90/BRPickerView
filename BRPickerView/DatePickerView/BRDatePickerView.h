@@ -123,4 +123,5 @@ typedef void(^BRDateCancelBlock)(void);
 #pragma mark - 弹出视图方法
 - (void)showWithAnimation:(BOOL)animation;
 
+-(NSString *)getDateFormatStr;
 @end
