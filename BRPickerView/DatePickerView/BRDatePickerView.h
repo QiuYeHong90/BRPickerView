@@ -123,5 +123,11 @@ typedef void(^BRDateCancelBlock)(void);
 #pragma mark - 弹出视图方法
 - (void)showWithAnimation:(BOOL)animation;
 
--(NSString *)getDateFormatStr;
+/**
+ 获取日期格式
+
+ @param model BRDatePickerMode
+ @return 日期格式
+ */
++(NSString *)getDateFormatStr:(BRDatePickerMode)model;
 @end

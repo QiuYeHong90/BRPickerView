@@ -329,9 +329,109 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
 }
 
 
--(NSString *)getDateFormatStr
++(NSString *)getDateFormatStr:(BRDatePickerMode)model
 {
-    return self.selectDateFormatter ;
+    NSString * formatStr ;
+    switch (model) {
+        case BRDatePickerModeTime:
+        {
+            formatStr = @"HH:mm";
+        
+        }
+            break;
+        case BRDatePickerModeDate:
+        {
+            formatStr = @"yyyy-MM-dd";
+  
+          
+        }
+            break;
+        case BRDatePickerModeDateAndTime:
+        {
+            formatStr = @"yyyy-MM-dd HH:mm";
+          
+       
+        }
+            break;
+        case BRDatePickerModeCountDownTimer:
+        {
+            formatStr = @"HH:mm";
+           
+       
+        }
+            break;
+            
+        case BRDatePickerModeYMDHM:
+        {
+            formatStr = @"yyyy-MM-dd HH:mm";
+         
+        }
+            break;
+        case BRDatePickerModeYMDH:
+        {
+            formatStr = @"yyyy-MM-dd HH:00";
+       
+        }
+            break;
+        case BRDatePickerModeDMYH:
+        {
+            formatStr = @"dd-MM-yyyy HH:00";
+ 
+        }
+            break;
+        case BRDatePickerModeMY:
+        {
+            formatStr = @"MM-yyyy";
+       
+        }
+            break;
+            
+        case BRDatePickerModeMDHM:
+        {
+            formatStr = @"MM-dd HH:mm";
+         
+        }
+            break;
+        case BRDatePickerModeYMD:
+        {
+            formatStr = @"yyyy-MM-dd";
+       
+        }
+            break;
+        case BRDatePickerModeDMY:
+        {
+            formatStr = @"dd-MM-yyyy";
+     
+        }
+            break;
+        case BRDatePickerModeYM:
+        {
+            formatStr = @"yyyy-MM";
+         
+        }
+            break;
+        case BRDatePickerModeY:
+        {
+            formatStr = @"yyyy";
+          
+        }
+            break;
+        case BRDatePickerModeMD:
+        {
+            formatStr = @"MM-dd";
+          
+        }
+            break;
+        case BRDatePickerModeHM:
+        {
+            formatStr = @"HH:mm";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    return formatStr ;
 }
 
 
