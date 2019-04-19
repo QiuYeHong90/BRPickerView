@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, BRDatePickerMode) {
     BRDatePickerModeDMYH,      // dd-MM-yyyy HH
     BRDatePickerModeDMY,      // dd-MM-yyyy
     BRDatePickerModeMY,      // MM-yyyy
+    BRDatePickerModeDMYHM,      // dd-MM-yyyy HH:mm
 };
 
 typedef void(^BRDateResultBlock)(NSString *selectValue);
