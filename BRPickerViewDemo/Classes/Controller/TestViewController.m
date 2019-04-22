@@ -297,9 +297,9 @@
             break;
         case 8:
         {
-//            [BRDateMixedView showDatePickerWithTitle:nil defaultSelValue:nil minDate:nil maxDate:nil isAutoSelect:NO themeColor:nil resultBlock:^(NSString *selectValue) {
-//                
-//            }];
+            [BRDatePickerView ysh_showDatePickerUnlimitedWithdateType:BRDatePickerModeDMY defaultSelValue:nil myDateFormatter:nil minDate:nil maxDate:nil isAutoSelect:NO themeColor:nil resultBlock:^(NSString *value, NSDate *date) {
+                NSLog(@"value--%@,--%@",value,date);
+            }];
         }
             break;
         default:
@@ -315,7 +315,7 @@
 
 - (NSArray *)titleArr {
     if (!_titleArr) {
-        _titleArr = @[@"姓名", @"性别", @"出生年月", @"出生时刻", @"联系方式", @"地址", @"学历", @"其它",@"混合日期"];
+        _titleArr = @[@"姓名", @"性别", @"出生年月", @"出生时刻", @"联系方式", @"地址", @"学历", @"其它",@"含有不限时间"];
     }
     return _titleArr;
 }

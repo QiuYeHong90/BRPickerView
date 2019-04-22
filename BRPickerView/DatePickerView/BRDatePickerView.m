@@ -510,7 +510,31 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
     [datePickerView showWithAnimation:YES];
 }
 
-
+#pragma mark - ysh_日期格式自定义 _unlimitedBtn
++ (void)ysh_showDatePickerUnlimitedWithdateType:(BRDatePickerMode)dateType
+                    defaultSelValue:(NSString *)defaultSelValue
+                    myDateFormatter:(NSString *)myDateFormatter
+                            minDate:(NSDate *)minDate
+                            maxDate:(NSDate *)maxDate
+                       isAutoSelect:(BOOL)isAutoSelect
+                         themeColor:(UIColor *)themeColor
+                        resultBlock:(void(^)(NSString * value,NSDate * date))resultBlock {
+    
+    NSString * selValue = [self getSelectValueWithModel:dateType myDateStr:defaultSelValue myDateFormat:myDateFormatter];
+    
+    BRDatePickerView *datePickerView = [[BRDatePickerView alloc]initWithTitle:nil dateType:dateType defaultSelValue:selValue minDate:minDate maxDate:maxDate isAutoSelect:isAutoSelect themeColor:themeColor resultBlock:^(NSString *selectValue) {
+        NSString * myDateStr  = [BRDatePickerView getMyDateStringWithMyFormat:myDateFormatter slectValue:selectValue model:dateType];
+        NSDate * selDate  = [BRDatePickerView getDateWithSlectValue:selectValue model:dateType];
+        if (resultBlock) {
+            resultBlock(myDateStr,selDate);
+        }
+    } cancelBlock:nil];
+    
+    datePickerView.unlimitedBtn.hidden = NO ;
+    
+    datePickerView.myDateFormatter = myDateFormatter ;
+    [datePickerView showWithAnimation:YES];
+}
 
 
 
@@ -1231,6 +1255,15 @@ typedef NS_ENUM(NSInteger, BRDatePickerStyle) {
         self.resultBlock(selectDateValue);
     }
 }
+#pragma mark - 不限按钮点击事件
+-(void)clickUnlimitedBtn
+{
+    [self dismissWithAnimation:YES];
+    if (self.resultBlock) {
+        self.resultBlock(@"");
+    }
+}
+
 
 #pragma mark - 弹出视图方法
 - (void)showWithAnimation:(BOOL)animation {

@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIView *topView;
 // 左边取消按钮
 @property (nonatomic, strong) UIButton *leftBtn;
+// 不限
+@property (nonatomic, strong) UIButton *unlimitedBtn;
 // 右边确定按钮
 @property (nonatomic, strong) UIButton *rightBtn;
 // 中间标题
@@ -37,6 +39,10 @@
 /** 确定按钮的点击事件 */
 - (void)clickRightBtn;
 
+/**
+ 不限按钮点击事件
+ */
+-(void)clickUnlimitedBtn;
 /** 自定义主题颜色 */
 - (void)setupThemeColor:(UIColor *)themeColor;
 

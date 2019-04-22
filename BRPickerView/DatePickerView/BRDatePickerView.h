@@ -166,4 +166,15 @@ typedef void(^BRDateCancelBlock)(void);
                        isAutoSelect:(BOOL)isAutoSelect
                          themeColor:(UIColor *)themeColor
                         resultBlock:(void(^)(NSString * value,NSDate * date))resultBlock;
+
+
+#pragma mark - ysh_日期格式自定义 _unlimitedBtn
++ (void)ysh_showDatePickerUnlimitedWithdateType:(BRDatePickerMode)dateType
+                                defaultSelValue:(NSString *)defaultSelValue
+                                myDateFormatter:(NSString *)myDateFormatter
+                                        minDate:(NSDate *)minDate
+                                        maxDate:(NSDate *)maxDate
+                                   isAutoSelect:(BOOL)isAutoSelect
+                                     themeColor:(UIColor *)themeColor
+                                    resultBlock:(void(^)(NSString * value,NSDate * date))resultBlock;
 @end

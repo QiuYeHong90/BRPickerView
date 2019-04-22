@@ -25,6 +25,9 @@
     [self.alertView addSubview:self.topView];
     // 添加左边取消按钮
     [self.topView addSubview:self.leftBtn];
+    // 添加不限按钮
+    [self.topView addSubview:self.unlimitedBtn];
+    
     // 添加中间标题按钮
     [self.topView addSubview:self.titleLabel];
     // 添加右边确定按钮
@@ -69,6 +72,7 @@
     return _topView;
 }
 
+
 #pragma mark - 左边取消按钮
 - (UIButton *)leftBtn {
     if (!_leftBtn) {
@@ -91,6 +95,46 @@
     }
     return _leftBtn;
 }
+
+-(UIButton *)unlimitedBtn
+{
+    if (!_unlimitedBtn) {
+        CGFloat space = 5 ;
+//        Unlimited Không giới hạn
+        //        CGFloat r_w = self.alertView.frame.size.width/4 - space;
+        CGFloat r_w = 38;
+        _unlimitedBtn.hidden = YES ;
+        _unlimitedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _unlimitedBtn.frame = CGRectMake((space+r_w)*1+space, 8, r_w, 28);
+        _unlimitedBtn.backgroundColor = kBRToolBarColor;
+        _unlimitedBtn.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
+        
+        UIColor * themColor = [UIColor colorWithRed:255/255.f green:114/255.f blue:1/255.f alpha:1];
+        _unlimitedBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f * kScaleFit];
+//        RGB(255,114,1)
+        [_unlimitedBtn setTitleColor:themColor forState:UIControlStateNormal];
+        
+//        _unlimitedBtn
+        
+        
+        
+        
+        //        ff7200
+        [_unlimitedBtn setTitle:NSLocalizedString(@"不限", nil) forState:UIControlStateNormal];
+        
+        CGSize titleSize = [_unlimitedBtn.titleLabel.text sizeWithFont:_unlimitedBtn.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
+        CGFloat w = titleSize.width+10;
+        _unlimitedBtn.frame = CGRectMake((space+r_w)*1+space, 8, w, 28);
+        
+        _unlimitedBtn.layer.borderWidth = 0.5;
+        _unlimitedBtn.layer.borderColor = themColor.CGColor;
+        _unlimitedBtn.layer.cornerRadius = 28/2.f;
+        
+        [_unlimitedBtn addTarget:self action:@selector(clickUnlimitedBtn) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _unlimitedBtn;
+}
+
 
 #pragma mark - 右边确定按钮
 - (UIButton *)rightBtn {
@@ -156,6 +200,12 @@
 - (void)clickRightBtn {
     
 }
+
+-(void)clickUnlimitedBtn
+{
+    
+}
+
 
 #pragma mark - 自定义主题颜色
 - (void)setupThemeColor:(UIColor *)themeColor {
