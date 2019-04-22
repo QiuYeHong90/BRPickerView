@@ -120,7 +120,7 @@
         
         
         //        ff7200
-        [_unlimitedBtn setTitle:NSLocalizedString(@"不限", nil) forState:UIControlStateNormal];
+        [_unlimitedBtn setTitle:NSLocalizedString(@"bill_filter_txt_no_limit", nil) forState:UIControlStateNormal];
         
         CGSize titleSize = [_unlimitedBtn.titleLabel.text sizeWithFont:_unlimitedBtn.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
         CGFloat w = titleSize.width+10;
