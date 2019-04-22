@@ -103,7 +103,6 @@
 //        Unlimited Không giới hạn
         //        CGFloat r_w = self.alertView.frame.size.width/4 - space;
         CGFloat r_w = 38;
-        _unlimitedBtn.hidden = YES ;
         _unlimitedBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _unlimitedBtn.frame = CGRectMake((space+r_w)*1+space, 8, r_w, 28);
         _unlimitedBtn.backgroundColor = kBRToolBarColor;
@@ -116,7 +115,7 @@
         
 //        _unlimitedBtn
         
-        
+        _unlimitedBtn.hidden = YES ;
         
         
         //        ff7200
